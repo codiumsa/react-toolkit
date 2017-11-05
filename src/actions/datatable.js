@@ -1,23 +1,7 @@
-import {
-  orderActionsForScope,
-  orderActionTypesForScope,
-  orderDispatchesForScope,
-} from './order-actions';
-import {
-  queryActionsForScope,
-  queryActionTypesForScope,
-  queryDispatchesForScope,
-} from './query-actions';
-import {
-  pagerActionsForScope,
-  pagerActionTypesForScope,
-  pagerDispatchesForScope,
-} from './pager-actions';
-import {
-  itemsActionsForScope,
-  itemsActionTypesForScope,
-  itemsDispatchesForScope,
-} from './items-actions';
+import {orderActionsForScope, orderActionTypesForScope, orderDispatchesForScope} from './order-actions';
+import {queryActionsForScope, queryActionTypesForScope, queryDispatchesForScope} from './query-actions';
+import {pagerActionsForScope, pagerActionTypesForScope, pagerDispatchesForScope} from './pager-actions';
+import {itemsActionsForScope, itemsActionTypesForScope, itemsDispatchesForScope} from './items-actions';
 
 /**
  * Retorna un object con los tipos de acciones disponibles para un scope determinado, combinando
@@ -29,7 +13,7 @@ export const dataTableActionTypesForScope = scope => ({
   ...orderActionTypesForScope(scope),
   ...queryActionTypesForScope(scope),
   ...pagerActionTypesForScope(scope),
-  ...itemsActionTypesForScope(scope),
+  ...itemsActionTypesForScope(scope)
 });
 
 /**
@@ -42,7 +26,7 @@ export const dataTableActionsForScope = scope => ({
   ...orderActionsForScope(scope),
   ...queryActionsForScope(scope),
   ...pagerActionsForScope(scope),
-  ...itemsActionsForScope(scope),
+  ...itemsActionsForScope(scope)
 });
 
 /**
@@ -56,5 +40,5 @@ export const dataTableDispatchesForScope = (scope, dispatch) => ({
   ...orderDispatchesForScope(scope, dispatch),
   ...queryDispatchesForScope(scope, dispatch),
   ...pagerDispatchesForScope(scope, dispatch),
-  ...itemsDispatchesForScope(scope, dispatch),
+  ...itemsDispatchesForScope(scope, dispatch)
 });

@@ -12,13 +12,6 @@
     }
   },
   "rules": {
-    "indent": [
-      "error",
-      2,
-      {
-        "SwitchCase": 1
-      }
-    ],
     "quotes": [
       2,
       "single"
@@ -63,14 +56,18 @@
     "process": true
   },
   "extends": [
-    "eslint:recommended",
+    "standard",
     "plugin:react/recommended",
-    "google"
+    "prettier",
+    "google",
+    "prettier/react",
+    "prettier/standard"
   ],
   "parser": "babel-eslint",
   "plugins": [
     "react",
-    "jsx-a11y",
+    "prettier",
+    "standard",
     "import"
   ]
 }

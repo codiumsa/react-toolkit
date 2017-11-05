@@ -1,19 +1,19 @@
 export const paging = {
-    PAGE_SIZE: 10
-}
+  PAGE_SIZE: 10,
+};
 
 export const ordering = {
-    directions: {
-        ASCENDING: 'asc',
-        DESCENDING: 'desc'
-    }
-}
+  directions: {
+    ASCENDING: 'asc',
+    DESCENDING: 'desc',
+  },
+};
 
 export const query = {
-    HISTORY_SIZE: 10
-}
+  HISTORY_SIZE: 10,
+};
 
 export const NETWORK = {
-    RETRIES: 3,
-    TIMEOUT: 2000
-}
+  RETRIES: 3,
+  TIMEOUT: 2000,
+};

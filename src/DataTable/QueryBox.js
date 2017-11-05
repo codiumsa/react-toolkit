@@ -13,26 +13,26 @@ import PropTypes from 'prop-types';
 const styleSheet = theme => ({
   underline: {
     '&:before': {
-      backgroundColor: 'rgba(0, 0, 0, 0.1)',
-    },
+      backgroundColor: 'rgba(0, 0, 0, 0.1)'
+    }
   },
   chip: {
-    backgroundColor: theme.palette.primary['50'],
+    backgroundColor: theme.palette.primary['50']
   },
   avatar: {
-    backgroundColor: theme.palette.primary['200'],
+    backgroundColor: theme.palette.primary['200']
   },
   row: {
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   filtersContainer: {
     paddingLeft: theme.spacing.unit * 3,
-    paddingRight: theme.spacing.unit * 3,
+    paddingRight: theme.spacing.unit * 3
   },
   filterLabel: {
-    color: 'rgba(0, 0, 0, 0.54)',
-  },
+    color: 'rgba(0, 0, 0, 0.54)'
+  }
 });
 
 /**
@@ -46,26 +46,25 @@ const styleSheet = theme => ({
  *  1. onQueryChanged: value => {} cuando se cambia el valor del campo de busqueda
  *  2. onQueryRequested: () => {} tiene como objetivo ser manejado por
  *  el reducer de historico de busquedas
- * @param {* props} props
+ * @param {Stirng} props
+ * @since 0.1.0
  */
 
 const QueryBox = props => {
   const {classes} = props;
   return (
     <div>
-      {props.queryData.generalFilter
-        ? <div className={classes.filtersContainer}>
+      {props.queryData.generalFilter ? (
+        <div className={classes.filtersContainer}>
           <Typography type="body2" className={classes.filterLabel}>
-              Filtros aplicados
+            Filtros aplicados
           </Typography>
           <div className={classes.row}>
             <Chip
               avatar={<Avatar className={classes.avatar}>=</Avatar>}
               label={
                 <div style={{display: 'flex', alignItems: 'center'}}>
-                  <small style={{fontSize: '0.7em'}}>
-                      Filtro general&nbsp;  &nbsp;
-                  </small>
+                  <small style={{fontSize: '0.7em'}}>Filtro general&nbsp; &nbsp;</small>
                   <span>{props.queryData.generalFilter}</span>
                 </div>
               }
@@ -77,7 +76,8 @@ const QueryBox = props => {
             />
           </div>
         </div>
-        : <Toolbar>
+      ) : (
+        <Toolbar>
           <IconButton disabled>
             <SearchIcon />
           </IconButton>
@@ -98,7 +98,8 @@ const QueryBox = props => {
               }}
             />
           </FormControl>
-        </Toolbar>}
+        </Toolbar>
+      )}
     </div>
   );
 };
@@ -107,7 +108,7 @@ QueryBox.propTypes = {
   classes: PropTypes.any,
   queryData: PropTypes.any.isRequired,
   onQueryChanged: PropTypes.func.isRequired,
-  onQueryRequested: PropTypes.func.isRequired,
+  onQueryRequested: PropTypes.func.isRequired
 };
 
 export default withStyles(styleSheet)(QueryBox);
