@@ -34,8 +34,8 @@ ConfirmationDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   onCancel: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  text: PropTypes.text.isRequired,
-  cancelText: PropTypes.text.isRequired,
+  text: PropTypes.string.isRequired,
+  cancelText: PropTypes.string.isRequired,
   onConfirm: PropTypes.func.isRequired,
   confirmText: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired
