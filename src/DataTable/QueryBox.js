@@ -10,31 +10,6 @@ import IconButton from 'material-ui/IconButton';
 import SearchIcon from 'material-ui-icons/Search';
 import PropTypes from 'prop-types';
 
-const styleSheet = theme => ({
-  underline: {
-    '&:before': {
-      backgroundColor: 'rgba(0, 0, 0, 0.1)'
-    }
-  },
-  chip: {
-    backgroundColor: theme.palette.primary['50']
-  },
-  avatar: {
-    backgroundColor: theme.palette.primary['200']
-  },
-  row: {
-    display: 'flex',
-    flexWrap: 'wrap'
-  },
-  filtersContainer: {
-    paddingLeft: theme.spacing.unit * 3,
-    paddingRight: theme.spacing.unit * 3
-  },
-  filterLabel: {
-    color: 'rgba(0, 0, 0, 0.54)'
-  }
-});
-
 /**
  * Componente que renderiza un toolbar con text input con el que realizar filtrados.
  * Recibe en los props el state de busqueda, con el siguiente formato:
@@ -46,7 +21,7 @@ const styleSheet = theme => ({
  *  1. onQueryChanged: value => {} cuando se cambia el valor del campo de busqueda
  *  2. onQueryRequested: () => {} tiene como objetivo ser manejado por
  *  el reducer de historico de busquedas
- * @param {Stirng} props
+ * @param {String} props
  * @since 0.1.0
  */
 
@@ -103,6 +78,31 @@ const QueryBox = props => {
     </div>
   );
 };
+
+const styleSheet = theme => ({
+  underline: {
+    '&:before': {
+      backgroundColor: 'rgba(0, 0, 0, 0.1)'
+    }
+  },
+  chip: {
+    backgroundColor: theme.palette.primary['50']
+  },
+  avatar: {
+    backgroundColor: theme.palette.primary['200']
+  },
+  row: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  filtersContainer: {
+    paddingLeft: theme.spacing.unit * 3,
+    paddingRight: theme.spacing.unit * 3
+  },
+  filterLabel: {
+    color: 'rgba(0, 0, 0, 0.54)'
+  }
+});
 
 QueryBox.propTypes = {
   classes: PropTypes.any,

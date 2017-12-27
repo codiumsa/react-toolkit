@@ -3,10 +3,12 @@ import {query} from 'src/utils/constants';
 
 /**
  * Potencialmente, los elementos del queryState lucen de esta forma:
+ *
+ * ```
  * {
  *  value: 'hola',
  *  history: ['chau', 'hola2']
- * }
+ * }```
  */
 const defaultQueryState = {
   generalFilterInput: '',
@@ -14,6 +16,12 @@ const defaultQueryState = {
   history: []
 };
 
+/**
+ * Retorna un reducer para el componente de filtrado general utilizado por el `DataTable`.
+ *
+ * @param {String} scope
+ * @return {Function}
+ */
 const queryReducerForScope = scope => {
   const actionTypes = queryActionTypesForScope(scope);
   return (state = defaultQueryState, action) => {

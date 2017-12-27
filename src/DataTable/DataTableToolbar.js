@@ -7,15 +7,12 @@ import IconButton from 'material-ui/IconButton';
 import Tooltip from 'material-ui/Tooltip';
 import PropTypes from 'prop-types';
 
-const toolbarStyles = theme => ({
-  spacer: {
-    flex: '100 100 100%'
-  },
-  title: {
-    flex: '0 0 auto'
-  }
-});
-
+/**
+ * Componente que permite extender la barra de elementos que tiene el DataTable.
+ *
+ * @param {Object} props
+ * @return {JSX.Element}
+ */
 let DataTableToolbar = props => {
   const {classes} = props;
   return (
@@ -39,6 +36,15 @@ DataTableToolbar.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.element
 };
+
+const toolbarStyles = theme => ({
+  spacer: {
+    flex: '100 100 100%'
+  },
+  title: {
+    flex: '0 0 auto'
+  }
+});
 
 DataTableToolbar = withStyles(toolbarStyles)(DataTableToolbar);
 export default DataTableToolbar;

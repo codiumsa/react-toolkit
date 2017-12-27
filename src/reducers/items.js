@@ -10,6 +10,13 @@ const defaultItemsState = {
   showError: false
 };
 
+/**
+ * Reducer para las acciones del `DataTable` relacionadas a los
+ * registros que se muestran en la tabla.
+ *
+ * @param {String} scope
+ * @return {Function}
+ */
 const itemsReducerForScope = scope => {
   const actionTypes = itemsActionTypesForScope(scope);
   return (state = defaultItemsState, action) => {

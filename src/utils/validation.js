@@ -3,25 +3,25 @@ import * as validate from 'validate.js';
 validate.validators.datetime.options = {
   notValid: 'El valor introducido no es válido',
   tooEarly: 'La fecha debe ser después de %{date}',
-  tooLate: 'La fecha debe ser antes de %{date}',
+  tooLate: 'La fecha debe ser antes de %{date}'
 };
 
 validate.validators.email.options = {
-  message: 'Debe ser un mail válido',
+  message: 'Debe ser un mail válido'
 };
 
 validate.validators.equality.options = {
-  message: 'Condición de igualdad no cumplida',
+  message: 'Condición de igualdad no cumplida'
 };
 
 validate.validators.format.options = {
-  message: 'Formato inválido',
+  message: 'Formato inválido'
 };
 
 validate.validators.length.options = {
   wrongLength: 'La longitud debe ser igual a %{count}',
   tooShort: 'La longitud mínima es %{count}',
-  tooLong: 'La longitud máxima es %{count}',
+  tooLong: 'La longitud máxima es %{count}'
 };
 
 validate.validators.numericality.options = {
@@ -34,15 +34,15 @@ validate.validators.numericality.options = {
   notLessThanOrEqualTo: 'El número introducido debe ser menor o igual a %{count}',
   notDivisibleBy: 'El número introducido debe ser divisible por %{count}',
   notOdd: 'El número introducido debe ser impar',
-  notEven: 'El número introducido debe ser par',
+  notEven: 'El número introducido debe ser par'
 };
 
 validate.validators.presence.options = {
-  message: 'Campo obligatorio',
+  message: 'Campo obligatorio'
 };
 
 validate.validators.url.options = {
-  message: 'No es una url válida',
+  message: 'No es una url válida'
 };
 
 /**
@@ -89,12 +89,7 @@ export const validateObjectLiteral = (value, validations) =>
  * @param {Object} validation - El spec de validations.js para realizar la validacion del field.
  * @return {Object}.
  */
-export const validateFieldAndBuildState = (
-  item,
-  currentValidationState = {},
-  field,
-  validation
-) => {
+export const validateFieldAndBuildState = (item, currentValidationState = {}, field, validation) => {
   const validationError = validateValue(item[field], validation);
   const validations = {...currentValidationState};
   validations[field] = validationError;
@@ -109,8 +104,7 @@ export const validateFieldAndBuildState = (
  */
 export const hasValidationError = currentValidationState =>
   Object.keys(currentValidationState).reduce(
-    (accumulator, currentValue) =>
-      accumulator || currentValidationState[currentValue],
+    (accumulator, currentValue) => accumulator || currentValidationState[currentValue],
     false
   );
 

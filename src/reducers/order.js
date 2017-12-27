@@ -3,14 +3,23 @@ import {ordering} from 'src/utils/constants';
 
 /**
  * Potencialmente, los elementos del orderState lucen de esta forma:
+ * ```
  * {
  *  field: {
  *      direction: asc/desc
  *  }
  * }
+ * ```
  */
 const defaultOrderState = {};
 
+/**
+ * Retorna el reducer que utiliza el componete `DataTable` para poder soportar
+ * ordenamiento por columna.
+ *
+ * @param {String} scope
+ * @return {Function}
+ */
 const orderReducerForScope = scope => {
   const actionTypes = orderActionTypesForScope(scope);
   return (state = defaultOrderState, action) => {

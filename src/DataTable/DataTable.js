@@ -9,15 +9,6 @@ import IconButton from 'material-ui/IconButton';
 import Tooltip from 'material-ui/Tooltip';
 import PropTypes from 'prop-types';
 
-const styleSheet = theme => ({
-  dataTableContainer: {
-    width: '85%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginTop: theme.spacing.unit * 6
-  }
-});
-
 /**
  * Componente que renderiza un datatable con capacidad de filtrado, ordenado y paginación
  * de elementos. Además de permitir incorporar acciones a realizar por registro.
@@ -79,4 +70,14 @@ class DataTable extends Component {
 DataTable.propTypes = {
   onReloadTable: PropTypes.func.isRequired
 };
+
+const styleSheet = theme => ({
+  dataTableContainer: {
+    width: '85%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: theme.spacing.unit * 6
+  }
+});
+
 export default withStyles(styleSheet)(DataTable);

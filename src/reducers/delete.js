@@ -7,6 +7,13 @@ const defaultDeleteState = {
   error: null
 };
 
+/**
+ * Returna un reducer que puede utilizarse para las acciones de
+ * eliminación de un registro de DataTable.
+ *
+ * @param {String} scope
+ * @return {Function}
+ */
 const deleteReducerForScope = scope => {
   const actionTypes = deleteActionTypesForScope(scope);
   return (state = defaultDeleteState, action) => {

@@ -11,7 +11,7 @@ import {actions} from 'src/actions/snackbar';
  * Renderiza un snackbar con el mensaje especificado.
  *
  * @param {Object} props - Los props del componente.
- * @return {Component}
+ * @return {JSX.Element}
  */
 const GenericSnackbar = props => {
   return (

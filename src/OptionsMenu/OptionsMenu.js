@@ -34,7 +34,8 @@ class OptionsMenu extends Component {
 
   /**
    * Render del componente.
-   * @return {Component}
+   *
+   * @return {JSX.Element}
    */
   render() {
     // Primero tenemos que clonar todos los elementos del menu para "aumentar" la funcion de

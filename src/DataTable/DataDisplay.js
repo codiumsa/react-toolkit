@@ -7,13 +7,6 @@ import DataTableRow from './DataTableRow';
 import DataTableHeader from './DataTableHeader';
 import Pager from './Pager';
 
-const styleSheet = theme => ({
-  dataDisplayContainer: {
-    padding: theme.spacing.unit * 3,
-    paddingTop: 0
-  }
-});
-
 /**
  * Componente que renderiza una tabla con su cabecera e items de acuerdo a la especificacion
  * recibida en el prop settings.
@@ -21,23 +14,28 @@ const styleSheet = theme => ({
  * y DataTableHeader que son utilizados aqui. Mirar la documentacion de los mismos para conocer
  * opciones de configuracion e inicializacion.
  * Tambien se espera en los props:
- *  1. listData, un object con la siguiente estructura:
+ *  1. **listData**, un object con la siguiente estructura:
+ *
+ *      ```javascript
  *      {
  *          items: [] array con los elementos a desplegar,
  *          loading: true/false, para renderizar una animacion de avance
- *      }
- *  2. orderData, que es el estado de ordenamiento que sigue el siguiente formato:
+ *      }```
+ *
+ *  2. **orderData**, que es el estado de ordenamiento que sigue el siguiente formato:
+ *      ```javascript
  *      {
  *          attr: {
  *              direction: 'asc'/'desc'
  *          }
- *      }
+ *      }```
  * Se deben recibir en props los dispatches de:
  *  1. onOrderChanged key => {} que es llamado cuando hay un evento de ordenamiento
  * Opcionalmente, puede recibir los props del pager, en pagerData. Si no se pasan los
- * props del pager, el mismo no sera renderizado
+ * props del pager, el mismo no sera renderizado.
+ *
  * @param {Object} props - Los props del componente.
- * @return {Component}.
+ * @return {JSX.Element}
  */
 const DataDisplay = props => {
   const {classes} = props;
@@ -72,5 +70,12 @@ DataDisplay.propTypes = {
   onChangeItemsCountPerPage: PropTypes.func.isRequired,
   onOrderChanged: PropTypes.func.isRequired
 };
+
+const styleSheet = theme => ({
+  dataDisplayContainer: {
+    padding: theme.spacing.unit * 3,
+    paddingTop: 0
+  }
+});
 
 export default withStyles(styleSheet)(DataDisplay);

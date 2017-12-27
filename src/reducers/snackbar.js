@@ -6,6 +6,13 @@ const defaultSnackbarState = {
   messages: []
 };
 
+/**
+ * Reducer para el componente `GenericSnackBar`.
+ *
+ * @param {Object} state
+ * @param {Object} action
+ * @return {Function}
+ */
 const snackbarReducer = (state = defaultSnackbarState, action) => {
   switch (action.type) {
     case actionTypes.CONCAT_MESSAGE_TO_SNACKBAR:

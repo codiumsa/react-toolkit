@@ -18,7 +18,7 @@ const styleSheet = theme => ({});
  *  que se desplegaran por pagina.
  *
  * @param {Object} props - Los props del componente.
- * @return {Component}
+ * @return {JSX.Element}
  */
 const Pager = props => {
   const {currentPage, pageSize, itemsCount} = props.pagerData;

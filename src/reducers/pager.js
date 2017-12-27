@@ -10,6 +10,12 @@ const defaultPagerState = {
   itemsCount: 0
 };
 
+/**
+ * Retorna un reducer para el componente de paginación asociado al `DataTable`.
+ *
+ * @param {String} scope
+ * @return {Function}
+ */
 const pagerReducerForScope = scope => {
   const actionTypes = pagerActionTypesForScope(scope);
   return (state = defaultPagerState, action) => {
