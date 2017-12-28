@@ -24,9 +24,7 @@ const rowSettings = {
     label: 'Acciones',
     cellRendering: item => (
       <div>
-        <Link
-          to={`geocercas/${item.id}/edit`}
-          style={{ textDecoration: 'none' }}>
+        <Link to={`frutas/${item.id}/edit`} style={{ textDecoration: 'none' }}>
           <Tooltip title="Editar" placement="top-start">
             <IconButton aria-label="Edit">
               <EditIcon />
