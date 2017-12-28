@@ -45,8 +45,8 @@ const DataTableRow = props => {
 };
 
 DataTableRow.propTypes = {
-  settings: PropTypes.any.isRequired,
-  item: PropTypes.any.isRequired
+  settings: PropTypes.object.isRequired,
+  item: PropTypes.object.isRequired
 };
 
 export default DataTableRow;

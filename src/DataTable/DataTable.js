@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {withStyles} from 'material-ui/styles';
-import DataDisplay from './DataDisplay';
 import QueryBox from './QueryBox';
 import DataTableToolbar from './DataTableToolbar';
 import Paper from 'material-ui/Paper';
@@ -8,6 +7,8 @@ import RefreshButton from 'material-ui-icons/Refresh';
 import IconButton from 'material-ui/IconButton';
 import Tooltip from 'material-ui/Tooltip';
 import PropTypes from 'prop-types';
+
+import DataDisplay from './DataDisplay';
 
 /**
  * Componente que renderiza un datatable con capacidad de filtrado, ordenado y paginación
@@ -68,7 +69,25 @@ class DataTable extends Component {
 }
 
 DataTable.propTypes = {
-  onReloadTable: PropTypes.func.isRequired
+  /**
+   * Título del DataTable.
+   */
+  title: PropTypes.string.isRequired,
+  onReloadTable: PropTypes.func.isRequired,
+  dataTableState: PropTypes.shape({
+    /**
+     * Listado de registros a mostrar en la tabla. Prop recibido por
+     * el componente [DataDisplay](#datadisplay).
+     */
+    itemsData: PropTypes.object,
+    orderData: PropTypes.object,
+    pagerData: PropTypes.object,
+    queryData: PropTypes.object
+  }).isRequired,
+  onPageChanged: PropTypes.func.isRequired,
+  rowSettings: PropTypes.object.isRequired,
+  onQueryRequested: PropTypes.func.isRequired,
+  resetPaging: PropTypes.func.isRequired
 };
 
 const styleSheet = theme => ({

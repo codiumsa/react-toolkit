@@ -20,15 +20,16 @@ import PropTypes from 'prop-types';
  * Por defecto, cada celda despliega el valor del label, a no ser que haya especificado
  * un componente en el headerRendering, en cuyo caso se renderizara el componente.
  * Ademas, se recibe el estado de ordenamiento, con el siguiente formato:
- * ```
+ *
+ * ```javascript
  * {
  *  attr: {
  *      direction: 'asc'/'desc'
  *  }
  * }
  * ```
- * Para el caso en el que se reciba una configuracion con sortable=true, se debe recibir ademas como
- * prop el dispatch onOrderChanged, una funcion que recibe el field y hace el dispatch que corresponde.
+ * Para el caso en el que se reciba una configuracion con `sortable=true`, se debe recibir ademas como
+ * prop el dispatch `onOrderChanged`, una funcion que recibe el field y hace el dispatch que corresponde.
  *
  * @param {Object} props - Los props del componente.
  * @return {JSX.Element}
@@ -73,8 +74,9 @@ const DataTableHeader = props => {
 };
 
 DataTableHeader.propTypes = {
-  orderData: PropTypes.any.isRequired,
-  settings: PropTypes.any.isRequired
+  orderData: PropTypes.any,
+  settings: PropTypes.any.isRequired,
+  onOrderChanged: PropTypes.func
 };
 
 export default DataTableHeader;

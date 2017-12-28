@@ -46,5 +46,4 @@ const toolbarStyles = theme => ({
   }
 });
 
-DataTableToolbar = withStyles(toolbarStyles)(DataTableToolbar);
-export default DataTableToolbar;
+export default withStyles(toolbarStyles)(DataTableToolbar);
