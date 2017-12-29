@@ -31,13 +31,44 @@ const ConfirmationDialog = props => {
 };
 
 ConfirmationDialog.propTypes = {
+  /**
+   * Indica si el modal se debe mostrar o no.
+   */
   open: PropTypes.bool.isRequired,
+
+  /**
+   * Función invocada cuando se hace click en el botón cancelar.
+   */
   onCancel: PropTypes.func.isRequired,
+
+  /**
+   * El título del modal.
+   */
   title: PropTypes.string.isRequired,
+
+  /**
+   * El texto principal del modal.
+   */
   text: PropTypes.string.isRequired,
+
+  /**
+   * Label para el botón cancelar.
+   */
   cancelText: PropTypes.string.isRequired,
+
+  /**
+   * Función invocada al hacer click en el botón ok.
+   */
   onConfirm: PropTypes.func.isRequired,
+
+  /**
+   * Label para el botón ok.
+   */
   confirmText: PropTypes.string.isRequired,
+
+  /**
+   * Indica si se debe mostrar o no una animación de loading.
+   */
   loading: PropTypes.bool.isRequired
 };
 
