@@ -96,9 +96,31 @@ DataDisplay.propTypes = {
    * [DataTableHeader](#datatableheader)
    */
   settings: PropTypes.object.isRequired,
+
+  /**
+   * Configuración de paginado.
+   */
   pagerData: PropTypes.object,
+
+  /**
+   * Función invocada cuando se hace click en los botones de paginación.
+   *
+   * @param {number} page - El número de página.
+   */
   onPageChanged: PropTypes.func,
+
+  /**
+   * Función invocada cuando se cambia el tamaño de página.
+   *
+   * @param {number} pageSize - El tamaño de página.
+   */
   onChangeItemsCountPerPage: PropTypes.func,
+
+  /**
+   * Función invocada cuando se hace click sobre una columna "ordenable".
+   *
+   * @param {string} field - La columna afectada.
+   */
   onOrderChanged: PropTypes.func
 };
 

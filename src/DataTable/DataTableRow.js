@@ -45,7 +45,14 @@ const DataTableRow = props => {
 };
 
 DataTableRow.propTypes = {
+  /**
+   * Configuración de las columnas.
+   */
   settings: PropTypes.object.isRequired,
+
+  /**
+   * Representa a un registro de la tabla.
+   */
   item: PropTypes.object.isRequired
 };
 

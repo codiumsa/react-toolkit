@@ -9,7 +9,7 @@ export interface ConfirmationDialogProps {
   /**
      * Función invocada cuando se hace click en el botón cancelar.
      */
-  onCancel?: function;
+  onCancel?: Function;
 
   /**
      * El título del modal.
@@ -29,7 +29,7 @@ export interface ConfirmationDialogProps {
   /**
      * Función invocada al hacer click en el botón ok.
      */
-  onConfirm?: function;
+  onConfirm?: Function;
 
   /**
      * Label para el botón ok.

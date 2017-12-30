@@ -32,8 +32,20 @@ let DataTableToolbar = props => {
 };
 
 DataTableToolbar.propTypes = {
+  /**
+   * @ignore
+   */
   classes: PropTypes.any,
+
+  /**
+   * El título del DataTable.
+   */
   title: PropTypes.string.isRequired,
+
+  /**
+   * Componente a renderizar como children del Toolbar. Útil para
+   * renderizar botones adicionales.
+   */
   children: PropTypes.element
 };
 

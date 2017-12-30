@@ -74,8 +74,21 @@ const DataTableHeader = props => {
 };
 
 DataTableHeader.propTypes = {
+  /**
+   * Representa la configuración de ordenamiento.
+   */
   orderData: PropTypes.any,
+
+  /**
+   * Configuración de las columnas.
+   */
   settings: PropTypes.any.isRequired,
+
+  /**
+   * Función invocada cuando se hace click sobre una columna "ordenable".
+   *
+   * @param {string} field - La columna afectada.
+   */
   onOrderChanged: PropTypes.func
 };
 

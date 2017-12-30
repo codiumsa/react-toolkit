@@ -44,8 +44,27 @@ const Pager = props => {
 };
 
 Pager.propTypes = {
-  pagerData: PropTypes.any.isRequired,
+  /**
+   * Estado de paginación
+   */
+  pagerData: PropTypes.shape({
+    currentPage: PropTypes.number,
+    pageSize: PropTypes.number,
+    itemsCount: PropTypes.number
+  }).isRequired,
+
+  /**
+   * Función invocada cuando se hace click en los botones de paginación.
+   *
+   * @param {number} page - El número de página.
+   */
   onPageChanged: PropTypes.func.isRequired,
+
+  /**
+   * Función invocada cuando se cambia el tamaño de página.
+   *
+   * @param {number} pageSize - El tamaño de página.
+   */
   onChangeItemsCountPerPage: PropTypes.func.isRequired
 };
 

@@ -73,21 +73,68 @@ DataTable.propTypes = {
    * Título del DataTable.
    */
   title: PropTypes.string.isRequired,
+
+  /**
+   * Función que permite cargar los datos del datatable.
+   */
   onReloadTable: PropTypes.func.isRequired,
+
+  /**
+   * Objeto que almacena el estado del datatable.
+   */
   dataTableState: PropTypes.shape({
     /**
      * Listado de registros a mostrar en la tabla. Prop recibido por
      * el componente [DataDisplay](#datadisplay).
      */
     itemsData: PropTypes.object,
+
+    /**
+     * Configuración de ordenamiento.
+     */
     orderData: PropTypes.object,
+
+    /**
+      * Configuración de paginación.
+      */
     pagerData: PropTypes.object,
+
+    /**
+     * Objeto que contiene los filtros aplicados al datatable. Utilizado
+     * por el componente [QueryBox](#querybox)
+     */
     queryData: PropTypes.object
   }).isRequired,
+
+  /**
+   * Función invocada cuando se hace click en los botones de paginación.
+   *
+   * @param {number} page - El número de página.
+   */
   onPageChanged: PropTypes.func.isRequired,
+
+  /**
+   * Se utiliza para la inicializacion de los componentes [DataTableRow](#datatablerow) y
+   * [DataTableHeader](#datatableheader)
+   */
   rowSettings: PropTypes.object.isRequired,
+
+  /**
+   * Función que permite filtrar los datos del datatable.
+   */
   onQueryRequested: PropTypes.func.isRequired,
-  resetPaging: PropTypes.func.isRequired
+
+  /**
+   * Función que restablece los datos de paginación.
+   */
+  resetPaging: PropTypes.func.isRequired,
+
+  /**
+   * Función invocada cuando se hace click sobre una columna "ordenable".
+   *
+   * @param {string} field - La columna afectada.
+   */
+  onOrderChanged: PropTypes.func.isRequired
 };
 
 const styleSheet = theme => ({

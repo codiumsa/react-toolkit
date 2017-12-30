@@ -105,9 +105,41 @@ const styleSheet = theme => ({
 });
 
 QueryBox.propTypes = {
+  /**
+   * @ignore
+   */
   classes: PropTypes.any,
-  queryData: PropTypes.any.isRequired,
+
+  /**
+   * Objeto que contiene los filtros aplicados al datatable.
+   */
+  queryData: PropTypes.shape({
+    /**
+     * El valor actual de búsqueda.
+     */
+    generalFilter: PropTypes.string,
+
+    /**
+     * El valor asociado al input de filtrado general.
+     */
+    generalFilterInput: PropTypes.string,
+
+    /**
+     * Array con las ultimas N busquedas anteriores
+     */
+    history: PropTypes.arrayOf(PropTypes.string)
+  }).isRequired,
+
+  /**
+   * Función invocada cuando se modifica el input de filtrado.
+   *
+   * @param {string} value - El nuevo valor de búsqueda
+   */
   onQueryChanged: PropTypes.func.isRequired,
+
+  /**
+   * Función que permite filtrar los datos del datatable.
+   */
   onQueryRequested: PropTypes.func.isRequired
 };
 

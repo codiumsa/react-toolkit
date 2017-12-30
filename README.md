@@ -23,7 +23,7 @@ Se recomienda utilizar [Visual Studio Code](https://code.visualstudio.com) ya qu
 react-toolkit integra el proyecto [commitizen](http://commitizen.github.io/cz-cli/) de manera tal a unificar los mensajes de commits. Para commitear los cambios ejecutar lo siguiente:
 
 ```shell
-$ npm run commit -- -s
+$ npm run commit
 ```
 
 Y elegir la opción que corresponda en base a los cambios introducidos.
